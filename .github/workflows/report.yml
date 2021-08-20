@@ -1,5 +1,3 @@
-# Auto-report action script, 3 times a day
-
 name: Auto-report action
 
 on: 
