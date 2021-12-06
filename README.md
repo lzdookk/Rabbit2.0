@@ -1,20 +1,8 @@
-# 中国滑稽大学(University of Ridiculous of China)健康打卡平台自动打卡脚本
-
-![Auto-report action](https://github.com/Violin9906/USTC-ncov-AutoReport/workflows/Auto-report%20action/badge.svg?branch=master&event=schedule)
-![School](https://img.shields.io/badge/School-URC-blue.svg)
-![Language](https://img.shields.io/badge/language-Python3-yellow.svg)
-![GitHub stars](https://img.shields.io/github/stars/Violin9906/USTC-ncov-AutoReport)
-![GitHub forks](https://img.shields.io/github/forks/Violin9906/USTC-ncov-AutoReport)
+# 中国科学技术大学健康打卡平台自动打卡脚本
 
 ## 说明
 
 **本打卡脚本仅供学习交流使用，请勿过分依赖。开发者对使用或不使用本脚本造成的问题不负任何责任，不对脚本执行效果做出任何担保，原则上不提供任何形式的技术支持。**
-
-## 更新记录
-
-- 20200831：增强稳定性
-- 20200827：增加打卡失败重试功能，增加License
-- 20200826：为配合学校最新规定，切换至Github Actions实现一天三次打卡
 
 ## 使用方法
 
@@ -48,20 +36,6 @@
 pip install -r requirements.txt
 ```
 
-**安装 tesseract**
-
-macos:
-
-```sh
-brew install tesseract
-```
-
-ubuntu:
-
-```sh
-sudo apt install tesseract-ocr
-```
-
 ### 运行打卡程序
 
 ```shell
@@ -73,7 +47,7 @@ python report.py [DATA] [STUID] [PASSWORD]
 
 使用 F12 开发者工具抓包之后得到数据，按照 json 格式写入 `data.json` 中。
 
-1. 登录进入 `https://weixine.歪比巴卜.edu.cn/2020/`，打开开发者工具（Chrome 可以使用 F12 快捷键），选中 Network 窗口：
+1. 登录进入 `https://weixine.ustc.edu.cn/2020/`，打开开发者工具（Chrome 可以使用 F12 快捷键），选中 Network 窗口：
 
 ![](./imgs/1.png)
 
@@ -84,30 +58,3 @@ python report.py [DATA] [STUID] [PASSWORD]
 3. 将找到的 Data 除 `_token` （每次都会改变，所以不需要复制，脚本中会每次获取新的 token 并添加到要提交的数据中）外都复制下来，存放在 `data.json` 中，并参考示例文件转换为对应的格式。
 
 4. 通过push操作触发构建任务，检查上报数据是否正确。
-
-## 许可
-
-MIT License
-
-Copyright (c) 2020 BwZhang
-
-Copyright (c) 2020 Violin Wang
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-

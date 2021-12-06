@@ -5,3 +5,4 @@ nohup.out
 .direnv
 __pycache__
 .envrc
+/data.json

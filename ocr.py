@@ -5,7 +5,10 @@ import requests
 from PIL import Image
 
 
-def ocr(img):
+def ocr(img) -> str:
+    """
+    识别验证码,由于可以绕过验证码,该方法不再需要
+    """
     img = np.array(img)
     img = img[:, :, ::-1].copy()
     img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
@@ -23,9 +26,7 @@ def ocr(img):
 
 
 if __name__ == "__main__":
-    raw = requests.get(
-        "https://passport.ustc.edu.cn/validatecode.jsp?type=login", stream=True
-    ).raw
+    raw = requests.get("https://passport.ustc.edu.cn/validatecode.jsp?type=login", stream=True).raw
     img = Image.open(raw)
     img.show()
     r = ocr(img)
