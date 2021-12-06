@@ -24,9 +24,10 @@ jobs:
         pip install -r requirements.txt
     - name: Run report script
       env:
-        STUID: ${{ secrets.Stuid }}
-        PASSWORD: ${{ secrets.Password }}
-        DATA_FILE: ${{ secrets.Data }}
+        STUID: ${{ secrets.STUID }}
+        PASSWORD: ${{ secrets.PASSWORD }}
+        DATA_FILE: ${{ secrets.DATA }}
+        BARK_URL: ${{ secrets.BARK_URL }}
       run: |
         echo "$DATA_FILE" > ./data.json
         python report.py data.json "$STUID" "$PASSWORD" && curl "$BARK_URL/GitHub Actions/健康打卡成功" || curl "$BARK_URL/GitHub Actions/健康打卡失败"
