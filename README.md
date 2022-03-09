@@ -1,4 +1,7 @@
 # Rabbit2.0
+
+20220309时发现Run Failure了，待修复
+
 20220120更新：  
 原Rabbit项目的2022修正版，每天上午9:17打卡，借(zhao)鉴(chao)自clysto的打卡项目。  
   
