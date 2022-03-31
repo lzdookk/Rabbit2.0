@@ -1,6 +1,8 @@
     
 {
     "juzhudi": "合肥市内校外",
+    "city_area": "包河区"
+    "jutiwz": "太湖新村"
     "body_condition": "1",
     "body_condition_detail": "",
     "now_status": "1",
